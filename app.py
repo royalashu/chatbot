@@ -1,12 +1,8 @@
+import os
 from telegram import Bot, Update
 from telegram.ext import Application, MessageHandler, filters, CallbackContext
-
-
-# Bot Token (Replace with your friend's bot token)
-BOT_TOKEN = "1758801861:AAHev6ksknIaiQK7O04MTHHLGCpPV8S77Zk"
-
-# Your Friend's Telegram ID (Only they can reply)
-OWNER_ID = 1675462613  # Replace with your friend's Telegram user ID
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+OWNER_ID = int(os.getenv("OWNER_ID"))
 
 # Dictionary to track conversations (User ID -> Forwarded Message ID)
 user_conversations = {}
